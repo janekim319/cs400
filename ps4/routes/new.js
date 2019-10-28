@@ -3,9 +3,9 @@ const router = express.Router();
 const app = express();
 
 router.post('/new', function (req, res, next){
-    var request = require("request");
+    const request = require("request");
 
-    var options = { method: 'GET',
+    const options = { method: 'GET',
         url: 'http://api.openweathermap.org/data/2.5/weather',
         qs: { APPID: 'aa96d216a339c190c5329877bc0e81e2', q: req.body.name /*'Boston'*/ },
         headers:
