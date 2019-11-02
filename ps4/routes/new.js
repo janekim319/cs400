@@ -1,19 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const app = express();
-
+const wx = require('../config/openweather')
 router.post('/new', function (req, res, next){
     const request = require("request");
 
     const options = { method: 'GET',
-        url: 'http://api.openweathermap.org/data/2.5/weather',
-        qs: { APPID: 'aa96d216a339c190c5329877bc0e81e2', q: req.body.name /*'Boston'*/ },
+        url: wx.URL,
+        qs: { APPID: wx.APPID, q: req.body.name /*'Boston'*/ },
         headers:
             { 'cache-control': 'no-cache',
                 Connection: 'keep-alive',
                 'Accept-Encoding': 'gzip, deflate',
-                Host: 'api.openweathermap.org',
-                'Postman-Token': 'c29ec64d-654e-42d1-8f4e-998e3f436c10,f009b60a-312b-42dd-bc88-bfa20660b3a0',
+                Host: wx.Host,
+                //'Postman-Token': 'c29ec64d-654e-42d1-8f4e-998e3f436c10,f009b60a-312b-42dd-bc88-bfa20660b3a0',
                 'Cache-Control': 'no-cache',
                 Accept: '*/*',
                 'User-Agent': 'PostmanRuntime/7.16.3' } };
