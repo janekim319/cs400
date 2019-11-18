@@ -3,7 +3,9 @@ extends layout
 block content
     h1= city_name
     p The weather in #{city_name} is #{weather}
-    p #{message}
-
+    if (message==true)
+        p You have searched #{city_name} before! The data have already been cached.
+    else if(message==false)
+        p This is your first time searching #{city_name}! The data had not been cached.
 
 
