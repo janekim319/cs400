@@ -10,7 +10,7 @@ describe('WeatherFormComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ WeatherFormComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

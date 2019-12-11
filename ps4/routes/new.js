@@ -23,7 +23,8 @@ router.post('/new', function (req, res, next){
 
         console.log(JSON.parse(body));
     //app.use(bodyParser.json()); -> app.js
-        res.render('weather', {city_name: req.body.name, weather: JSON.parse(body).weather[0].main});
+        res.json({city_name: req.body.name, weather: JSON.parse(body).weather[0].main});
+
     });
 
 

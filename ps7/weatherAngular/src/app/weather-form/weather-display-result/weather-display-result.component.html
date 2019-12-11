@@ -1,0 +1,20 @@
+
+<div *ngIf="weather  else elseBlock">
+  <ul>
+    <li *ngFor="let city of weather">
+      {{city}}
+    </li>
+  </ul>
+</div>
+
+<ng-template #elseBlock></ng-template>
+ <!-- {{weather.weather}} -->
+<!--
+<div *ngIf="weather">
+  <ul>
+   <li *ngFor="let city of weather">
+      {{weather.weather}}
+    </li>
+  </ul>
+</div>
+-->

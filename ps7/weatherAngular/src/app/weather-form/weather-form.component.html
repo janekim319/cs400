@@ -1,7 +1,11 @@
+
+
+
+
 <label>What City?
   <input type="text" [formControl]="city">
   <button type="submit" (click)="submitCity()" [disabled]="!city.valid">Submit</button>
 </label>
 
-{{weather}}
 
+<app-weather-display-result [weather]="weather"></app-weather-display-result>

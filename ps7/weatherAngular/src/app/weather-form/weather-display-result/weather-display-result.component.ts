@@ -1,6 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
-import {WEATHER} from '../models/weatherModel';
-import {WeatherAPIService} from '../services/weather-api.service';
+import {WEATHER} from '../../models/weatherModel';
+
 
 @Component({
   selector: 'app-weather-display-result',
@@ -8,9 +8,11 @@ import {WeatherAPIService} from '../services/weather-api.service';
   styleUrls: ['./weather-display-result.component.css']
 })
 export class WeatherDisplayResultComponent implements OnInit {
-  @Input() returnedWeather: WEATHER[];
+ @Input() weather: WEATHER[];
 
-  constructor(private weatherService: WeatherAPIService) { }
+
+
+  constructor() { }
 
   ngOnInit() {
   }

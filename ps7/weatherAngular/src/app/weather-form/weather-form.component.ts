@@ -3,6 +3,7 @@ import {FormControl} from '@angular/forms';
 import {Validators} from '@angular/forms';
 import {WeatherAPIService} from '../services/weather-api.service';
 import {WEATHER} from '../models/weatherModel';
+import {WeatherDisplayResultComponent} from '../weather-form/weather-display-result/weather-display-result.component';
 
 
 @Component({
@@ -14,9 +15,7 @@ import {WEATHER} from '../models/weatherModel';
 export class WeatherFormComponent implements OnInit {
   city = new FormControl('', [Validators.required, Validators.minLength(1)]);
 
-  // weather: any;
-
-  @Input() weather: WEATHER[];
+ weather: WEATHER[];
 
   constructor(private weatherService: WeatherAPIService) { }
 
@@ -28,7 +27,14 @@ export class WeatherFormComponent implements OnInit {
 
     this.weatherService.getWeather(this.city.value).subscribe
 
- (weather => {this.weather = weather; console.log(`Weather: ${this.weather}`)});
+
+    ((result: any) => {
+
+      this.weather = Array.of(result.weather);
+      console.log(`stringified result: ${JSON.stringify(result)}`);
+      console.log(`Result: ${result}`);
+        console.log(`Weather: ${this.weather}`);
+    });
   }
 
 }

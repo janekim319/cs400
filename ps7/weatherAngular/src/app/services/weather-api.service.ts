@@ -6,7 +6,9 @@ import {WEATHER} from '../models/weatherModel';
 @Injectable({
   providedIn: 'root'
 })
+
 export class WeatherAPIService {
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -18,6 +20,5 @@ export class WeatherAPIService {
 
     });
   }
-
-  constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient) { }
 }
